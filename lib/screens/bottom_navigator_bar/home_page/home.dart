@@ -1,3 +1,4 @@
+import 'package:cookrecep/screens/white_steak/steak_page.dart';
 import 'package:flutter/material.dart';
 
 class HomePage extends StatelessWidget {
@@ -106,6 +107,23 @@ class RecipeCard extends StatelessWidget {
               style: TextStyle(
                 fontSize: 14,
                 color: Colors.grey[700],
+              ),
+            ),
+            GestureDetector(
+              onTap: () {
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => SteakPage(),
+                    ));
+              },
+              child: const Text(
+                'Ver recetas',
+                style: TextStyle(
+                  color: Colors.blue,
+                  fontSize: 16,
+                  fontFamily: "monserrat",
+                ),
               ),
             ),
           ],

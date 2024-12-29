@@ -68,88 +68,139 @@ class RegisterScreen extends StatelessWidget {
                         ),
                         child: Column(
                           children: <Widget>[
-                            Container(
-                              padding: EdgeInsets.all(10),
-                              decoration: BoxDecoration(
-                                border: Border(
-                                  bottom: BorderSide(color: Colors.grey[200]!),
+                            // Campo de Nombre
+                            TextFormField(
+                              decoration: InputDecoration(
+                                labelText: "Nombre",
+                                prefixIcon: Icon(
+                                  Icons.person,
+                                  color: Colors.orange[900],
+                                ),
+                                labelStyle:
+                                    TextStyle(color: Colors.orange[900]),
+                                floatingLabelBehavior:
+                                    FloatingLabelBehavior.auto,
+                                border: OutlineInputBorder(
+                                  borderRadius: BorderRadius.circular(10),
+                                  borderSide:
+                                      BorderSide(color: Colors.grey[200]!),
+                                ),
+                                focusedBorder: OutlineInputBorder(
+                                  borderRadius: BorderRadius.circular(10),
+                                  borderSide: BorderSide(
+                                    color: Colors.orange[900]!,
+                                  ),
                                 ),
                               ),
-                              child: TextField(
-                                decoration: InputDecoration(
-                                  hintText: "Nombre",
-                                  hintStyle: TextStyle(color: Colors.grey),
-                                  border: InputBorder.none,
-                                ),
-                              ),
+                              keyboardType: TextInputType.name,
                             ),
-                            Container(
-                              padding: EdgeInsets.all(10),
-                              decoration: BoxDecoration(
-                                border: Border(
-                                  bottom: BorderSide(color: Colors.grey[200]!),
+                            SizedBox(height: 20),
+                            // Campo de Apellidos
+                            TextFormField(
+                              decoration: InputDecoration(
+                                labelText: "Apellidos",
+                                prefixIcon: Icon(
+                                  Icons.person_outline,
+                                  color: Colors.orange[900],
+                                ),
+                                labelStyle:
+                                    TextStyle(color: Colors.orange[900]),
+                                floatingLabelBehavior:
+                                    FloatingLabelBehavior.auto,
+                                border: OutlineInputBorder(
+                                  borderRadius: BorderRadius.circular(10),
+                                  borderSide:
+                                      BorderSide(color: Colors.grey[200]!),
+                                ),
+                                focusedBorder: OutlineInputBorder(
+                                  borderRadius: BorderRadius.circular(10),
+                                  borderSide: BorderSide(
+                                    color: Colors.orange[900]!,
+                                  ),
                                 ),
                               ),
-                              child: TextField(
-                                decoration: InputDecoration(
-                                  hintText: "Apellidos",
-                                  hintStyle: TextStyle(color: Colors.grey),
-                                  border: InputBorder.none,
-                                ),
-                              ),
+                              keyboardType: TextInputType.name,
                             ),
-                            Container(
-                              padding: EdgeInsets.all(10),
-                              decoration: BoxDecoration(
-                                border: Border(
-                                  bottom: BorderSide(color: Colors.grey[200]!),
+                            SizedBox(height: 20),
+                            // Campo de Correo electrónico
+                            TextFormField(
+                              decoration: InputDecoration(
+                                labelText: "Correo electrónico",
+                                prefixIcon: Icon(
+                                  Icons.email,
+                                  color: Colors.orange[900],
+                                ),
+                                labelStyle:
+                                    TextStyle(color: Colors.orange[900]),
+                                floatingLabelBehavior:
+                                    FloatingLabelBehavior.auto,
+                                border: OutlineInputBorder(
+                                  borderRadius: BorderRadius.circular(10),
+                                  borderSide:
+                                      BorderSide(color: Colors.grey[200]!),
+                                ),
+                                focusedBorder: OutlineInputBorder(
+                                  borderRadius: BorderRadius.circular(10),
+                                  borderSide: BorderSide(
+                                    color: Colors.orange[900]!,
+                                  ),
                                 ),
                               ),
-                              child: TextField(
-                                decoration: InputDecoration(
-                                  hintText: "Correo electrónico",
-                                  hintStyle: TextStyle(color: Colors.grey),
-                                  border: InputBorder.none,
-                                ),
-                              ),
+                              keyboardType: TextInputType.emailAddress,
                             ),
-                            Container(
-                              padding: EdgeInsets.all(10),
-                              decoration: BoxDecoration(
-                                border: Border(
-                                  bottom: BorderSide(color: Colors.grey[200]!),
+                            SizedBox(height: 20),
+                            // Campo de Contraseña
+                            TextFormField(
+                              obscureText: true,
+                              decoration: InputDecoration(
+                                labelText: "Contraseña",
+                                prefixIcon: Icon(
+                                  Icons.lock,
+                                  color: Colors.orange[900],
+                                ),
+                                labelStyle:
+                                    TextStyle(color: Colors.orange[900]),
+                                floatingLabelBehavior:
+                                    FloatingLabelBehavior.auto,
+                                border: OutlineInputBorder(
+                                  borderRadius: BorderRadius.circular(10),
+                                  borderSide:
+                                      BorderSide(color: Colors.grey[200]!),
+                                ),
+                                focusedBorder: OutlineInputBorder(
+                                  borderRadius: BorderRadius.circular(10),
+                                  borderSide: BorderSide(
+                                    color: Colors.orange[900]!,
+                                  ),
                                 ),
                               ),
-                              child: TextField(
-                                decoration: InputDecoration(
-                                  hintText: "Contraseña",
-                                  hintStyle: TextStyle(color: Colors.grey),
-                                  border: InputBorder.none,
-                                ),
-                              ),
+                              keyboardType: TextInputType.visiblePassword,
                             ),
                           ],
                         ),
                       ),
                       SizedBox(
-                        height: 20,
-                      ),
-                      SizedBox(
                         height: 30,
                       ),
-                      Container(
-                        height: 50,
-                        margin: EdgeInsets.symmetric(horizontal: 50),
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(50),
-                          color: Colors.orange[900],
-                        ),
-                        child: Center(
-                          child: Text(
-                            "Registrarse",
-                            style: TextStyle(
-                                color: Colors.white,
-                                fontWeight: FontWeight.bold),
+                      GestureDetector(
+                        onTap: () {
+                          // Aquí puedes añadir la lógica para registrar al usuario
+                          print("Usuario registrado");
+                        },
+                        child: Container(
+                          height: 50,
+                          margin: EdgeInsets.symmetric(horizontal: 50),
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(50),
+                            color: Colors.orange[900],
+                          ),
+                          child: Center(
+                            child: Text(
+                              "Registrarse",
+                              style: TextStyle(
+                                  color: Colors.white,
+                                  fontWeight: FontWeight.bold),
+                            ),
                           ),
                         ),
                       ),

@@ -45,8 +45,9 @@ class LoginScreen extends StatelessWidget {
                 decoration: BoxDecoration(
                   color: Colors.white,
                   borderRadius: BorderRadius.only(
-                      topLeft: Radius.circular(60),
-                      topRight: Radius.circular(60)),
+                    topLeft: Radius.circular(60),
+                    topRight: Radius.circular(60),
+                  ),
                 ),
                 child: Padding(
                   padding: EdgeInsets.all(20),
@@ -70,35 +71,58 @@ class LoginScreen extends StatelessWidget {
                         ),
                         child: Column(
                           children: <Widget>[
-                            Container(
-                              padding: EdgeInsets.all(10),
-                              decoration: BoxDecoration(
-                                border: Border(
-                                  bottom: BorderSide(color: Colors.grey[200]!),
+                            TextFormField(
+                              decoration: InputDecoration(
+                                labelText: "Correo electrónico",
+                                prefixIcon: Icon(
+                                  Icons.email,
+                                  color: Colors.orange[900],
+                                ),
+                                labelStyle:
+                                    TextStyle(color: Colors.orange[900]),
+                                floatingLabelBehavior:
+                                    FloatingLabelBehavior.auto,
+                                border: OutlineInputBorder(
+                                  borderRadius: BorderRadius.circular(10),
+                                  borderSide:
+                                      BorderSide(color: Colors.grey[200]!),
+                                ),
+                                focusedBorder: OutlineInputBorder(
+                                  borderRadius: BorderRadius.circular(10),
+                                  borderSide: BorderSide(
+                                    color: Colors.orange[900]!,
+                                  ),
                                 ),
                               ),
-                              child: TextField(
-                                decoration: InputDecoration(
-                                  hintText: "Correo electrónico",
-                                  hintStyle: TextStyle(color: Colors.grey),
-                                  border: InputBorder.none,
-                                ),
-                              ),
+                              keyboardType: TextInputType.emailAddress,
                             ),
-                            Container(
-                              padding: EdgeInsets.all(10),
-                              decoration: BoxDecoration(
-                                border: Border(
-                                  bottom: BorderSide(color: Colors.grey[200]!),
+                            SizedBox(height: 20),
+                            // Campo de contraseña
+                            TextFormField(
+                              obscureText: true,
+                              decoration: InputDecoration(
+                                labelText: "Contraseña",
+                                prefixIcon: Icon(
+                                  Icons.lock,
+                                  color: Colors.orange[900],
+                                ),
+                                labelStyle:
+                                    TextStyle(color: Colors.orange[900]),
+                                floatingLabelBehavior:
+                                    FloatingLabelBehavior.auto,
+                                border: OutlineInputBorder(
+                                  borderRadius: BorderRadius.circular(10),
+                                  borderSide:
+                                      BorderSide(color: Colors.grey[200]!),
+                                ),
+                                focusedBorder: OutlineInputBorder(
+                                  borderRadius: BorderRadius.circular(10),
+                                  borderSide: BorderSide(
+                                    color: Colors.orange[900]!,
+                                  ),
                                 ),
                               ),
-                              child: TextField(
-                                decoration: InputDecoration(
-                                  hintText: "Contraseña",
-                                  hintStyle: TextStyle(color: Colors.grey),
-                                  border: InputBorder.none,
-                                ),
-                              ),
+                              keyboardType: TextInputType.visiblePassword,
                             ),
                           ],
                         ),
@@ -182,7 +206,7 @@ class LoginScreen extends StatelessWidget {
                       SizedBox(height: 10),
                       Container(
                         height: 50,
-                        width: 50, // Hacemos el botón cuadrado
+                        width: 50,
                         decoration: BoxDecoration(
                           color: Colors.white,
                           shape: BoxShape.circle,
