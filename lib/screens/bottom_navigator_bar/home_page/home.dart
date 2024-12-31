@@ -1,3 +1,4 @@
+import 'package:cookrecep/screens/red_steak/stake_red.dart';
 import 'package:cookrecep/screens/white_steak/steak_page.dart';
 import 'package:flutter/material.dart';
 
@@ -12,26 +13,31 @@ class HomePage extends StatelessWidget {
         'name': 'Carnes Blancas',
         'total': 15,
         'image': 'assets/recipes/white_steak.jpg',
+        'route': SteakPage(),
       },
       {
         'name': 'Carnes Rojas',
         'total': 10,
         'image': 'assets/recipes/red_steak.jpg',
+        'route': SteakRedPage(),
       },
       {
         'name': 'Pescados y Mariscos',
         'total': 8,
         'image': 'assets/recipes/fish.jpg',
+        'route': SteakPage(),
       },
       {
         'name': 'Dips',
         'total': 20,
         'image': 'assets/recipes/dips.jpeg',
+        'route': SteakPage(),
       },
       {
         'name': 'Salsas',
         'total': 12,
         'image': 'assets/recipes/sauce.jpg',
+        'route': SteakPage(),
       },
     ];
 
@@ -49,6 +55,7 @@ class HomePage extends StatelessWidget {
             name: categories[index]['name'],
             total: categories[index]['total'],
             imageUrl: categories[index]['image'],
+            route: categories[index]['route'],
           );
         },
       ),
@@ -61,11 +68,13 @@ class RecipeCard extends StatelessWidget {
   final String name;
   final int total;
   final String imageUrl;
+  final Widget route;
 
   const RecipeCard({
     required this.name,
     required this.total,
     required this.imageUrl,
+    required this.route,
     super.key,
   });
 
@@ -114,7 +123,7 @@ class RecipeCard extends StatelessWidget {
                 Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (context) => SteakPage(),
+                      builder: (context) => route,
                     ));
               },
               child: const Text(

@@ -62,6 +62,7 @@ flutter:
     - assets/recipes/dips.jpeg
     - assets/recipes/sauce.jpg
     - assets/recipes/chickenRep/
+    - assets/recipes/steakRec/
   # The following line ensures that the Material Icons font is
   # included with your application, so that you can use the icons in
   # the material Icons class.
