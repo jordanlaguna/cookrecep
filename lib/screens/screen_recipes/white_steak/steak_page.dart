@@ -81,7 +81,7 @@ class SteakPage extends StatelessWidget {
         isFavorite: false,
       ),
       Recipe(
-        name: 'Pechuga de pollo en salsa cremosa',
+        name: 'Pechuga en salsa cremosa',
         calificacion: 4.6,
         imageUrl: 'assets/recipes/chickenRep/pechuga.jpg',
         ingredientes: [

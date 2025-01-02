@@ -9,7 +9,7 @@ class FishPage extends StatelessWidget {
   Widget build(BuildContext context) {
     final List<Recipe> recipes = [
       Recipe(
-        name: 'Filete de pescado a la plancha',
+        name: 'Filete de pescado',
         calificacion: 4.5,
         imageUrl: 'assets/recipes/fishRec/filet.jpg',
         ingredientes: [
@@ -25,7 +25,7 @@ class FishPage extends StatelessWidget {
         isFavorite: false,
       ),
       Recipe(
-        name: 'Camarones al en salsa de coco',
+        name: 'Camarones salsa de coco',
         calificacion: 4.9,
         imageUrl: 'assets/recipes/fishRec/camaron.jpg',
         ingredientes: [
