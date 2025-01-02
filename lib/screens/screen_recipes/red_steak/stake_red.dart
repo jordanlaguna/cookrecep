@@ -1,4 +1,5 @@
 import 'package:cookrecep/model/recipes_list.dart';
+import 'package:cookrecep/screens/card/recipe_card.dart';
 import 'package:flutter/material.dart';
 
 class SteakRedPage extends StatelessWidget {
@@ -28,6 +29,7 @@ class SteakRedPage extends StatelessWidget {
           '1/4 taza de laurel',
           'Sal y pimienta al gusto',
         ],
+        isFavorite: false,
       ),
       Recipe(
         name: 'Costilla de res asada',
@@ -52,6 +54,7 @@ class SteakRedPage extends StatelessWidget {
           '1/4 taza de mantequilla',
           'Sal y pimienta al gusto',
         ],
+        isFavorite: false,
       ),
       Recipe(
         name: 'Lomo relleno',
@@ -71,6 +74,7 @@ class SteakRedPage extends StatelessWidget {
           '1/2 taza de perejil picado',
           '1/2 taza de nueces picadas',
         ],
+        isFavorite: false,
       ),
       Recipe(
         name: 'New York strip steak',
@@ -91,6 +95,7 @@ class SteakRedPage extends StatelessWidget {
           '1/2 taza de vino blanco',
           'Sal y pimienta al gusto',
         ],
+        isFavorite: false,
       ),
       Recipe(
         name: 'Tomahawk steak',
@@ -110,6 +115,7 @@ class SteakRedPage extends StatelessWidget {
           '1/2 taza de mantequilla',
           'Sal y pimienta al gusto',
         ],
+        isFavorite: false,
       ),
     ];
 
@@ -156,83 +162,6 @@ class SteakRedPage extends StatelessWidget {
               recipe: recipes[index],
             );
           },
-        ),
-      ),
-    );
-  }
-}
-
-class RecipeCard extends StatelessWidget {
-  final Recipe recipe;
-
-  const RecipeCard({
-    required this.recipe,
-    super.key,
-  });
-
-  @override
-  Widget build(BuildContext context) {
-    return Card(
-      margin: const EdgeInsets.symmetric(vertical: 8),
-      elevation: 4,
-      shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(12),
-      ),
-      child: Padding(
-        padding: const EdgeInsets.all(16.0),
-        child: Column(
-          children: [
-            Text(
-              recipe.name,
-              style: const TextStyle(
-                fontSize: 18,
-                fontWeight: FontWeight.bold,
-              ),
-            ),
-            const SizedBox(height: 8),
-            // Imagen de la receta
-            ClipRRect(
-              borderRadius: BorderRadius.circular(12),
-              child: Image.asset(
-                recipe.imageUrl,
-                height: 150,
-                width: double.infinity,
-                fit: BoxFit.cover,
-              ),
-            ),
-            const SizedBox(height: 8),
-            // Calificación
-            Text(
-              'Calificación: ${recipe.calificacion}',
-              style: TextStyle(
-                fontSize: 14,
-                color: Colors.grey[700],
-              ),
-            ),
-            GestureDetector(
-              onTap: () {
-                // Abrir modal con los detalles de la receta
-                showModalBottomSheet(
-                  context: context,
-                  shape: RoundedRectangleBorder(
-                    borderRadius:
-                        BorderRadius.vertical(top: Radius.circular(20)),
-                  ),
-                  builder: (BuildContext context) {
-                    return RecipeDetailsModal(recipe: recipe);
-                  },
-                );
-              },
-              child: const Text(
-                'Ver receta',
-                style: TextStyle(
-                  color: Colors.blue,
-                  fontSize: 16,
-                  fontFamily: "monserrat",
-                ),
-              ),
-            ),
-          ],
         ),
       ),
     );

@@ -1,5 +1,6 @@
-import 'package:cookrecep/screens/red_steak/stake_red.dart';
-import 'package:cookrecep/screens/white_steak/steak_page.dart';
+import 'package:cookrecep/screens/screen_recipes/fish_recipe/fish_recipes.dart';
+import 'package:cookrecep/screens/screen_recipes/red_steak/stake_red.dart';
+import 'package:cookrecep/screens/screen_recipes/white_steak/steak_page.dart';
 import 'package:flutter/material.dart';
 
 class HomePage extends StatelessWidget {
@@ -25,10 +26,10 @@ class HomePage extends StatelessWidget {
         'name': 'Pescados y Mariscos',
         'total': 8,
         'image': 'assets/recipes/fish.jpg',
-        'route': SteakPage(),
+        'route': FishPage(),
       },
       {
-        'name': 'Dips',
+        'name': 'Asados',
         'total': 20,
         'image': 'assets/recipes/dips.jpeg',
         'route': SteakPage(),
